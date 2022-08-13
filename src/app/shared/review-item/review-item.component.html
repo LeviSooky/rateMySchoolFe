@@ -1,0 +1,32 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Csillagok</th>
+    <th scope="col">Értékelés</th>
+    <th scope="col">Létrehozás Dátuma</th>
+    <th scope="col">Tantárgy</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let country of reviews">
+    <td>
+      <ngb-rating [rate]="country.stars" [max]="5" [readonly]="true"></ngb-rating>
+    </td>
+    <td>
+      <textarea class="form-control" rows="8" [readonly]="true">{{country.content}}</textarea>
+    </td>
+    <td>{{country.date}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<!--<div class="d-flex justify-content-between p-2">-->
+<!--  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshCountries()">-->
+<!--  </ngb-pagination>-->
+
+<!--  <select class="form-select w-auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries()">-->
+<!--    <option [ngValue]="2">2 items per page</option>-->
+<!--    <option [ngValue]="4">4 items per page</option>-->
+<!--    <option [ngValue]="6">6 items per page</option>-->
+<!--  </select>-->
+<!--</div>-->
